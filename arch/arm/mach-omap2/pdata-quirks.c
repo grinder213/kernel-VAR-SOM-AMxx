@@ -286,6 +286,7 @@ static void __init omap5_uevm_legacy_init(void)
 #ifdef CONFIG_SOC_AM43XX
 static void __init am4_evm_legacy_init_lcd_hdmi_switch(int gpio_num)
 {
+	return;
 	if (gpio_request_one(gpio_num, GPIOF_DIR_OUT, "LCD/HDMI switch"))
 		return;
 
@@ -301,7 +302,7 @@ static void __init am437x_gp_evm_legacy_init(void)
 	struct device_node *node;
 	int ret, flags;
 	const int lcd_hdmi_switch_gpio = 104;
-
+	return;
 	am4_evm_legacy_init_lcd_hdmi_switch(lcd_hdmi_switch_gpio);
 
 	flags = GPIOF_OUT_INIT_HIGH;	/* Enable eMMC */
